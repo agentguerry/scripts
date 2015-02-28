@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+set host [lindex $argv 0]
+set password [lindex $argv 1]
+spawn ssh-copy-id -i /home/username/.ssh/id_rsa.pub username@$host  
+#expect "Are you sure you want to continue connecting (yes/no)?"
+#send "yes\r"
+expect "*assword:"
+send "adpassword\r"
+expect eof
